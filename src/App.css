@@ -1,38 +1,126 @@
-.App {
-  text-align: center;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: orange;
+  background-image: url(/imgages/terrainc.png);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  height: 100vh;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+.top {
+  margin: 140px auto;
+  justify-content: center;
+  align-items: center;
+  height: 663px;
+  width: 442px;
+  border: 2px solid black;
+  background-image: url(/imgages/window1.png);
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.questionBox {}
+
+.modal {
+  padding-bottom: 8px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.modal>h1 {
+  color: rgb(239, 220, 117);
+  font-family: 'Arial Narrow ', sans-serif;
+  font-size: 23px;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 14px;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(239, 220, 117);
+}
+
+.task-box {
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(239, 220, 117);
+  margin: 0 auto;
+  height: 260px;
+  width: 360px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+
+  /* border: 1px solid black;  */
+
 }
 
-.App-link {
-  color: #61dafb;
+/* .task-help {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -20px;
+    
+
+} */
+.answer-box {
+  height: 190px;
+  display: flex;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+.arrayResult{
+  visibility: hidden;
+}
+.arraryResulVie{
+  visibility: visible;
+}
+.showResult{
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  background-color: inherit;
+  border: none;
+}
+.button-box {
+  margin: 20px 20px 0px 20px;
+  width: 380px;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: end; */
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button1 {
+  background: url(/imgages/button.png);
+  height: 38px;
+  width: 70px;
+  cursor: pointer;
+}
+
+.button2 {
+  background: url(/imgages/button.png);
+  height: 38px;
+  width: 70px;
+  cursor: pointer;
+}
+
+.btnText {
+  padding: 25px 0;
+  height: auto;
+  width: auto;
+  display: flex;
 }
