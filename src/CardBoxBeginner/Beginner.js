@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 
 
 // vse to chto nize = poluechaem iz app.js v vide propsov
-const Beginner = ({ title, question, nextQuestion, startQuizBeg, answer, previousQuiestion, lastElement, score, dataBeginner }) => {
-        console.log(question, lastElement);
+const Beginner = ({ title, question, nextQuestion, startQuizBeg, answer, previousQuiestion, lastElement, score, dataBeginner, level }) => {
+
     const [selectedIndex, setSelectedIndex] = useState();
     return (
+        level ?
         <div className="header">
             <div className="top">
                 <div className="modal"> <h1>{title}</h1>
@@ -52,7 +53,7 @@ const Beginner = ({ title, question, nextQuestion, startQuizBeg, answer, previou
 
                 </div>
             </div>
-        </div>
+        </div> : null
     );
 
 };
