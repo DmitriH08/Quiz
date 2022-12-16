@@ -14,6 +14,8 @@ const App = () => {
     const [right, setRight] = useState(0);
     const [failure, setFailure] = useState(0);
 
+    // setLEvelEvent prinimaet sobitie kotoroe peredaetsa v (e),  v nawem sluchae e - element v kotorom proizowlo sobitie
+    // Toest mi menjaem state levela s pustoj stroki na znachenie kotoroe vibral user i komponenta pererisovivaetsa
     const setLevelEvent = (e) => {
         setLevel(e.target.value);
     };
@@ -40,13 +42,16 @@ const App = () => {
 
     return (
         <div>
-            {!level ? <MainMenuComponent handleChange={setLevelEvent}></MainMenuComponent> : null}
-            {level ? <QuizContainerComponent
-                nextQuestion={nextQuestion}
-                previousQuiestion={previousQuiestion}
+            {/*esli net urovnja to u nas pustaja srtoka ili ee net toest 'null, a esli est to u nas vivoditsa komponenta s voprosami izhodja ot levela*/}
+            {/*   props  handleChange idet v dochernuju komponentu a to chto sprava (setLevelEvent) idet v roditelskuju t.e v App.js*/}
+            {!level ? <MainMenuComponent handleChange={setLevelEvent}></MainMenuComponent> : <QuizContainerComponent
+                // data i level - mi peredaem dannie v vide props v komponentu
                 data={data}
+                // level - pervichnij state urovnja kotorij poluchili iz MainMenu i peredaem v QuizContainer
                 level={level}
-            ></QuizContainerComponent> : null}
+            ></QuizContainerComponent> }
+            {/*    esli est level to risuetsa voprosi s otvetami i td*/}
+
         </div>
     );
 };
