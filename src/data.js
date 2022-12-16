@@ -8,7 +8,7 @@ export const dataLevels = [
         title: "Beginner lvl Qestion 1",
         question:'Which unit is more powerful?',
         answer: [`Archangel`, `Black Dragon`, `Titan`, `Lazure Dragon`],
-        correctAnswer: 3,
+        correctAnswer: `Lazure Dragon`,
         level: 'beginner',
 
     },
@@ -18,7 +18,7 @@ export const dataLevels = [
         title: "Qestion 2",
         question: 'How many gold/day gives you  a capitol?',
         answer: [`3000`, `5000`, `4000`, `40000,`],
-        correctAnswer: 2,
+        correctAnswer: `4000`,
         level: 'beginner',
 
     },
@@ -26,7 +26,7 @@ export const dataLevels = [
         title: "Qestion 3",
         question: 'Chose the name of heroe, who have default spell - lightning chain?',
         answer: [`Sandro`, `Solmir`, `Xeron`, `Jog,`],
-        correctAnswer: 1,
+        correctAnswer: `Solmir`,
         level: 'beginner',
     },
     {
@@ -34,7 +34,7 @@ export const dataLevels = [
         title: "Qestion 4",
         question: 'Which "Town" gives you ability to have a double-mana?',
         answer: [`Tower`, `Castle`, `Dungen`, `Inferno,`],
-        correctAnswer: 2,
+        correctAnswer:`Dungen`,
         level: 'beginner',
     },
     {
@@ -42,7 +42,7 @@ export const dataLevels = [
         title: "Qestion 5",
         question: 'How many items you need to combine a Statue of Legion?',
         answer: [`5`, `6`, `7`, `4,`],
-        correctAnswer: 0,
+        correctAnswer: `5`,
         level: 'beginner',
     },
     {
@@ -50,7 +50,7 @@ export const dataLevels = [
         title: "Qestion 6",
         question: 'Which artifacte gives you "explosion" spell into your spellbock?',
         answer: [`Wizard's Well`, `Crown of Dragontooth`, `Helm of Chaos`, `Spellbinder's Hat`],
-        correctAnswer: 3,
+        correctAnswer: `Spellbinder's Hat`,
         level: 'beginner',
     },
 
@@ -60,7 +60,7 @@ export const dataLevels = [
         title: "Middle lvl Qestion 1",
         question: 'Which unit is more powerful?',
         answer: [`Archangel`, `Black Dragon`, `Titan`, `Lazure Dragon`],
-        correctAnswer: 3,
+        correctAnswer: `Dungen`,
         level: 'middle',
     },
     {
@@ -68,7 +68,7 @@ export const dataLevels = [
         title: "Qestion 2",
         question: 'How many gold/day gives you  a capitol?',
         answer: [`3000`, `5000`, `4000`, `40000,`],
-        correctAnswer: 2,
+        correctAnswer: `Dungen`,
         level: 'middle',
 
     },
@@ -76,7 +76,7 @@ export const dataLevels = [
         title: "Qestion 3",
         question: 'Chose the name of heroe, who have default spell - lightning chain?',
         answer: [`Sandro`, `Solmir`, `Xeron`, `Jog,`],
-        correctAnswer: 1,
+        correctAnswer: `Dungen`,
         level: 'middle',
     },
     {
@@ -84,7 +84,7 @@ export const dataLevels = [
         title: "Qestion 4",
         question: 'Which "Town" gives you ability to have a double-mana?',
         answer: [`Tower`, `Castle`, `Dungen`, `Inferno,`],
-        correctAnswer: 2,
+        correctAnswer: `Dungen`,
         level: 'middle',
     },
     {
@@ -92,7 +92,7 @@ export const dataLevels = [
         title: "Qestion 5",
         question: 'How many items you need to combine a Statue of Legion?',
         answer: [`5`, `6`, `7`, `4,`],
-        correctAnswer: 0,
+        correctAnswer: `Dungen`,
         level: 'middle',
     },
     {
@@ -100,7 +100,7 @@ export const dataLevels = [
         title: "Qestion 6",
         question: 'Which artifacte gives you "explosion" spell into your spellbock?',
         answer: [`Wizard's Well`, `Crown of Dragontooth`, `Helm of Chaos`, `Spellbinder's Hat`],
-        correctAnswer: 3,
+        correctAnswer: `Dungen`,
         level: 'middle',
     },
 
@@ -109,7 +109,7 @@ export const dataLevels = [
         title: "Master lvl Qestion 1",
         question:'Which unit is more powerful?',
         answer: [`Archangel`, `Black Dragon`, `Titan`, `Lazure Dragon`],
-        correctAnswer: 3,
+        correctAnswer: `Dungen`,
         level: 'master',
 
     },
@@ -119,7 +119,7 @@ export const dataLevels = [
         title: "Qestion 2",
         question: 'How many gold/day gives you  a capitol?',
         answer: [`3000`, `5000`, `4000`, `40000,`],
-        correctAnswer: 2,
+        correctAnswer: `Dungen`,
         level: 'master',
 
     },
@@ -127,7 +127,7 @@ export const dataLevels = [
         title: "Qestion 3",
         question: 'Chose the name of heroe, who have default spell - lightning chain?',
         answer: [`Sandro`, `Solmir`, `Xeron`, `Jog,`],
-        correctAnswer: 1,
+        correctAnswer: `Dungen`,
         level: 'master',
     },
     {
@@ -135,7 +135,7 @@ export const dataLevels = [
         title: "Qestion 4",
         question: 'Which "Town" gives you ability to have a double-mana?',
         answer: [`Tower`, `Castle`, `Dungen`, `Inferno,`],
-        correctAnswer: 2,
+        correctAnswer: `Dungen`,
         level: 'master',
     },
     {
@@ -143,7 +143,7 @@ export const dataLevels = [
         title: "Qestion 5",
         question: 'How many items you need to combine a Statue of Legion?',
         answer: [`5`, `6`, `7`, `4,`],
-        correctAnswer: 0,
+        correctAnswer: `Dungen`,
         level: 'master',
     },
     {
@@ -151,7 +151,7 @@ export const dataLevels = [
         title: "Qestion 6",
         question: 'Which artifacte gives you "explosion" spell into your spellbock?',
         answer: [`Wizard's Well`, `Crown of Dragontooth`, `Helm of Chaos`, `Spellbinder's Hat`],
-        correctAnswer: 3,
+        correctAnswer: `Dungen`,
         level: 'master',
     },
 
@@ -161,7 +161,7 @@ export const dataLevels = [
         title: "Hardcore lvl Qestion 1",
         question: 'Which unit is more powerful?',
         answer: [`Archangel`, `Black Dragon`, `Titan`, `Lazure Dragon`],
-        correctAnswer: 3,
+        correctAnswer: `Dungen`,
         level: 'hardcore',
     },
     {
@@ -169,7 +169,7 @@ export const dataLevels = [
         title: "Qestion 2",
         question: 'How many gold/day gives you  a capitol?',
         answer: [`3000`, `5000`, `4000`, `40000,`],
-        correctAnswer: 2,
+        correctAnswer: `Dungen`,
         level: 'hardcore',
 
     },
@@ -177,7 +177,7 @@ export const dataLevels = [
         title: "Qestion 3",
         question: 'Chose the name of heroe, who have default spell - lightning chain?',
         answer: [`Sandro`, `Solmir`, `Xeron`, `Jog,`],
-        correctAnswer: 1,
+        correctAnswer: `Dungen`,
         level: 'hardcore',
     },
     {
@@ -185,7 +185,7 @@ export const dataLevels = [
         title: "Qestion 4",
         question: 'Which "Town" gives you ability to have a double-mana?',
         answer: [`Tower`, `Castle`, `Dungen`, `Inferno,`],
-        correctAnswer: 2,
+        correctAnswer: `Dungen`,
         level: 'hardcore',
     },
     {
@@ -193,7 +193,7 @@ export const dataLevels = [
         title: "Qestion 5",
         question: 'How many items you need to combine a Statue of Legion?',
         answer: [`5`, `6`, `7`, `4,`],
-        correctAnswer: 0,
+        correctAnswer: `Dungen`,
         level: 'hardcore',
     },
     {
@@ -201,7 +201,7 @@ export const dataLevels = [
         title: "Qestion 6",
         question: 'Which artifacte gives you "explosion" spell into your spellbock?',
         answer: [`Wizard's Well`, `Crown of Dragontooth`, `Helm of Chaos`, `Spellbinder's Hat`],
-        correctAnswer: 3,
+        correctAnswer: `Dungen`,
         level: 'hardcore',
     },
 

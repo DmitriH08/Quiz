@@ -12,9 +12,13 @@ const App = () => {
     const [questionIndex, setQuestionIndex] = useState(0);
     const [tryAgain, setTryAgain] = useState('');
     const [score, setScore] = useState(0);
-    const [right, setRight] = useState(0);
-    const [failure, setFailure] = useState(0);
-
+    const [result, setResult] = useState(false)
+    const setScoreEvent = () =>{
+        setScore(score + 1)
+    }
+    const endQuizEvent = () =>{
+        setResult(true)
+    }
     // setLevelEvent prinimaet sobitie kotoroe peredaetsa v (e),  v nawem sluchae e - element v kotorom proizowlo sobitie
     // Toest mi menjaem state levela s pustoj stroki na znachenie kotoroe vibral user i komponenta pererisovivaetsa
     const setLevelEvent = (e) => {
@@ -26,16 +30,10 @@ const App = () => {
     const nextQuestion = () => {
         console.log(`next`);
         // data.length - 1 = index poslednego elementa
-        // if (dataBeginner[questionIndex].correctAnswer === selectedIndex) {
+        // if (data[questionIndex].correctAnswer === selectedIndex) {
         //     setScore(score +1 )
         // };
-        // if (dataMidle[questionIndex].correctAnswer === selectedIndex) {
-        //     setScore(score +1 )
-        // };
-        // setQuestionIndex(questionIndex + 1);
-        // } else {
-        //     alert("NEPRAVILNO");
-        // }
+
 
     };
 
@@ -52,7 +50,9 @@ const App = () => {
                 data={data}
                 // level - pervichnij state urovnja kotorij poluchili iz MainMenu i peredaem v QuizContainer
                 level={level}
+                scoreChange={setScoreEvent}
                 handleChange={setTryAgainEvent}
+                endQuiz={endQuizEvent}
             ></QuizContainerComponent> }
                 }
             {/*    esli est level to risuetsa voprosi s otvetami i td*/}

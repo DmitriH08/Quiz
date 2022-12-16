@@ -1,15 +1,30 @@
 import React, {useState} from "react";
 
-export const QuizContainerComponent = ({data, level,handleChange }) => {
+export const QuizContainerComponent = ({data, level,handleChange,scoreChange,endQuiz }) => {
     // v uslovii metoda filter, level dolzen sootvetstvoovat levelu kotorij vibral user. Object v metode level eto object massiva
     const dataByLevel = data.filter(object => object.level === level);
     const questionsCount = dataByLevel.length;
     const [questionIndex, setQuestionIndex] = useState(0);
     const [answerIndex, setAnswerIndex] = useState(0);
+    const [userAnswer, setUserAnswer] = useState('')
+    const setUserAnswerEvent = (e,answerIndex) => {
+        // pri vibore chekboxa uznaem chto polzavatel vibral(otvet- (e.target.value))
+        setUserAnswer(e.target.value)
+        // setAnswerIndex otmechaet pravilnij checkbox
+        setAnswerIndex(answerIndex)
 
-    const nextQuestionEvent = () => {
-        setQuestionIndex(questionIndex + 1);
+
     }
+    const nextQuestionEvent = (correctAnswer) => {
+        setQuestionIndex(questionIndex + 1);
+        if (userAnswer === correctAnswer){
+            scoreChange()
+        }
+        if (questionIndex === correctAnswer){
+            endQuiz()
+        }
+    }
+
 
     const previousQuestionEvent = () => {
         //peredacha ot dochernego k roditelskomu ('')
@@ -34,12 +49,14 @@ export const QuizContainerComponent = ({data, level,handleChange }) => {
                             </div>
                             <h1 className="task-box">{item.question}</h1>
                             <div className="answer-box">
-                                 {/*el - eto otveti kotorie mi vivodim iz massiva strokami */}
-                                {item.answer.map((el, index) =>
+                                 {/*el - eto massiv otvetov kotorie mi vivodim iz massiva strokami */}
+                                {item.answer.map((answer, index) =>
                                     <div key={index}>
-                                        <label htmlFor={index.toString()}><h2>{el}</h2></label>
-                                        <input checked={index === answerIndex} value={el}
-                                               onChange={() => setAnswerIndex(index)} id={index}
+                                        <label htmlFor={index.toString()}><h2>{answer}</h2></label>
+                                        {/*Primer onChange: .addEventListener('click'/change, setUserAnswerEvent(e.target.value, index))
+                                        v dannom sluchae (e) eto callback functia*/}
+                                        <input checked={index === answerIndex} value={answer}
+                                               onChange={(e) => setUserAnswerEvent(e,index)} id={index}
                                                type="checkbox"/>
                                     </div>
                                 )}
@@ -48,7 +65,7 @@ export const QuizContainerComponent = ({data, level,handleChange }) => {
                                 <button onClick={previousQuestionEvent} className="button1">
                                     <h2 className="btnText">Previous Quiestion</h2>
                                 </button>
-                                <button onClick={nextQuestionEvent} className="button2">
+                                <button onClick={() => nextQuestionEvent(item.correctAnswer)} className="button2">
                                     <h2 className="btnText">Next Quiestion</h2>
                                 </button>
                             </div>
