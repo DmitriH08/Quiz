@@ -20,7 +20,7 @@ export const QuizContainerComponent = ({data, level,handleChange,scoreChange,end
         if (userAnswer === correctAnswer){
             scoreChange()
         }
-        if (questionIndex === correctAnswer){
+        if ((questionIndex +1)  === questionsCount){
             endQuiz()
         }
     }

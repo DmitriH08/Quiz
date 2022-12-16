@@ -3,6 +3,7 @@ import {useState} from "react";
 import {MainMenuComponent} from "./components/MainMenuComponent/main-menu-component";
 import {dataLevels} from './data'
 import {QuizContainerComponent} from "./components/QuizContainerComponent/quiz-container-component";
+import {ResultComponent} from "./components/ResultComponent/ResultComponent";
 
 
 const App = () => {
@@ -56,7 +57,8 @@ const App = () => {
             ></QuizContainerComponent> }
                 }
             {/*    esli est level to risuetsa voprosi s otvetami i td*/}
-
+            {result ?
+            <ResultComponent> </ResultComponent> : null }
         </div>
     );
 };
