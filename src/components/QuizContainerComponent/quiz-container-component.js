@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export const QuizContainerComponent = ({data, level, }) => {
+export const QuizContainerComponent = ({data, level,handleChange }) => {
     // v uslovii metoda filter, level dolzen sootvetstvoovat levelu kotorij vibral user. Object v metode level eto object massiva
     const dataByLevel = data.filter(object => object.level === level);
     const questionsCount = dataByLevel.length;
@@ -12,10 +12,11 @@ export const QuizContainerComponent = ({data, level, }) => {
     }
 
     const previousQuestionEvent = () => {
-        //
-        if (!questionIndex) {
-            return;
-        }
+        //peredacha ot dochernego k roditelskomu ('')
+        if (questionIndex === 0) {
+            handleChange('')
+            }
+
         setQuestionIndex(questionIndex - 1);
     }
 

@@ -7,19 +7,22 @@ import {QuizContainerComponent} from "./components/QuizContainerComponent/quiz-c
 
 const App = () => {
     const data = dataLevels;
+    // pustaja stroka s useState - iznachalnoe znachenie levela
     const [level, setLevel] = useState('');
     const [questionIndex, setQuestionIndex] = useState(0);
-
+    const [tryAgain, setTryAgain] = useState('');
     const [score, setScore] = useState(0);
     const [right, setRight] = useState(0);
     const [failure, setFailure] = useState(0);
 
-    // setLEvelEvent prinimaet sobitie kotoroe peredaetsa v (e),  v nawem sluchae e - element v kotorom proizowlo sobitie
+    // setLevelEvent prinimaet sobitie kotoroe peredaetsa v (e),  v nawem sluchae e - element v kotorom proizowlo sobitie
     // Toest mi menjaem state levela s pustoj stroki na znachenie kotoroe vibral user i komponenta pererisovivaetsa
     const setLevelEvent = (e) => {
         setLevel(e.target.value);
     };
-
+    const setTryAgainEvent = (e) =>{
+        setLevel(e);
+    };
     const nextQuestion = () => {
         console.log(`next`);
         // data.length - 1 = index poslednego elementa
@@ -49,7 +52,9 @@ const App = () => {
                 data={data}
                 // level - pervichnij state urovnja kotorij poluchili iz MainMenu i peredaem v QuizContainer
                 level={level}
+                handleChange={setTryAgainEvent}
             ></QuizContainerComponent> }
+                }
             {/*    esli est level to risuetsa voprosi s otvetami i td*/}
 
         </div>
