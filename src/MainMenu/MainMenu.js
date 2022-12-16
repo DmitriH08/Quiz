@@ -1,32 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import RenderCoponents from "./MainMenu/RenderComponents"
 // vse to chto nize = poluechaem iz app.js v vide propsov
-export const MainMenu = ({ title, question, lastElement, score,  }) => {
-({handleChange})=>{
-        console.log(question, lastElement);
-       
-       
-        }
-    return (
+export const MainMenu = ({ handleChange }) => {
 
-        <div className="header">
-            <div className="top">
-                <div className="modal"> <h1>{title}</h1>
-                </div>
-                <h1 className="task-box">{question}</h1>
-                
-                <div className="answer-box">
-                <button  onClick={handleChange} value = {'begginer'} > Beginner</button>
-                <button onClick={handleChange} value = {'Middle'}> Middle</button>
-                <button> Master</button>
-                <button> GrandMaster</button>
+    
 
+return (
 
-                </div>
+    <div className="header">
+        <div className="top">
+            <div className="modal"> <h1>Welcome </h1>
             </div>
+            <h1 className="task-box">Choose a level</h1>
+            {/*handleChange eto analogija AddEventListener,*/}
+            {/*tolko mozno takze peredavat dannie ot rebenka k roditelju cherez  object event (e)*/}
+            <div className="answer-box">
+            <button onClick={handleChange} value = {'Begginer'} > Beginner</button>
+            <button onClick={handleChange} value = {'Middle'}> Middle</button>
+            <button onClick={handleChange} value = {'Master'}> Master</button>
+            <button onClick={handleChange} value = {'Hardcore'}> GrandMaster</button>
+
+
             </div>
-      
-    );
+        </div>
+        </div>
+  
+);
 
 };
 
