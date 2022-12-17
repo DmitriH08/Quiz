@@ -6,9 +6,9 @@ export const MainMenuComponent = ({handleChange}) => {
     return (
         <div className="header">
             <div className="top">
-                <div className="modal"><h1></h1>
+                <div className="modal"><h1>Welcome to Quiz of Heroes 3 + Hota</h1>
                 </div>
-                <h1 className="task-box"></h1>
+                <h1 className="task-box">Choose Your level!</h1>
                 <div className="button-box">
                     <button onClick={handleChange} value={'beginner'}>Beginner</button>
                     <button onClick={handleChange} value={'middle'}>Middle</button>

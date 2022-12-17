@@ -58,7 +58,10 @@ const App = () => {
                 }
             {/*    esli est level to risuetsa voprosi s otvetami i td*/}
             {result ?
-            <ResultComponent> </ResultComponent> : null }
+            <ResultComponent
+                handleChange={setTryAgainEvent}
+                score = {score}
+            ></ResultComponent> : null }
         </div>
     );
 };
