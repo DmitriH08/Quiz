@@ -1,10 +1,9 @@
 import React, {useState} from "react";
 
-export const QuizContainerComponent = ({data, level, handleChange, scoreChange, endQuiz}) => {
+export const QuizContainerComponent = ({data, level, handleChange, scoreChange, endQuiz, questionIndex, handleQuestionIndex}) => {
     // v uslovii metoda filter, level dolzen sootvetstvoovat levelu kotorij vibral user. Object v metode level eto object massiva
     const dataByLevel = data.filter(object => object.level === level);
     const questionsCount = dataByLevel.length;
-    const [questionIndex, setQuestionIndex] = useState(0);
     const [answerIndex, setAnswerIndex] = useState(0);
     const [userAnswer, setUserAnswer] = useState('')
     const setUserAnswerEvent = (e, answerIndex) => {
@@ -12,16 +11,14 @@ export const QuizContainerComponent = ({data, level, handleChange, scoreChange, 
         setUserAnswer(e.target.value)
         // setAnswerIndex otmechaet pravilnij checkbox
         setAnswerIndex(answerIndex)
-
-
     }
+
     const nextQuestionEvent = (correctAnswer) => {
-        setQuestionIndex(questionIndex + 1);
+        handleQuestionIndex(questionIndex + 1)
         if (userAnswer === correctAnswer) {
             scoreChange()
         }
         if ((questionIndex + 1) >= questionsCount) {
-            console.log('1')
             endQuiz()
         }
     }
@@ -32,7 +29,7 @@ export const QuizContainerComponent = ({data, level, handleChange, scoreChange, 
         if (questionIndex === 0) {
             handleChange('')
         }
-        setQuestionIndex(questionIndex - 1);
+        handleQuestionIndex(questionIndex - 1)
     }
 
     return (

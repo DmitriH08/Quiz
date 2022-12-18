@@ -12,11 +12,14 @@ const App = () => {
     // pustaja stroka s useState - iznachalnoe znachenie levela
     const [level, setLevel] = useState('');
     const [score, setScore] = useState(0);
+    const [questionIndex, setQuestionIndex] = useState(0);
     const [levelIndexButton, setLevelIndexButton] = useState(0);
     const [result, setResult] = useState(false)
+
     const setScoreEvent = () =>{
         setScore(score + 1)
     }
+
     const endQuizEvent = () =>{
         setResult(true)
     }
@@ -25,30 +28,25 @@ const App = () => {
     const setLevelEvent = (e, index) => {
         setLevel(e);
         setLevelIndexButton(index);
+        reset();
     };
     const setTryAgainEvent = (e) =>{
         setLevel(e);
-        setScore(0)
+        setLevelIndexButton(0)
+        reset();
     };
-    const nextQuestion = () => {
-        console.log(`next`);
-        // data.length - 1 = index poslednego elementa
-        // if (data[questionIndex].correctAnswer === selectedIndex) {
-        //     setScore(score +1 )
-        // };
-
-
-    };
-
-    const previousQuiestion = () =>{
-        console.log(`previous`);
-    }
 
     const openNextLevel = () => {
-        setResult(false);
-        setScore(0)
+        setLevelIndexButton(levelIndexButton + 1);
         const newLevel = levelsList.at(levelIndexButton + 1);
         setLevel(newLevel);
+        reset();
+    }
+
+    const reset = () => {
+        setResult(false);
+        setScore(0)
+        setQuestionIndex(0)
     }
 
 
@@ -61,6 +59,8 @@ const App = () => {
                 data={data}
                 // level - pervichnij state urovnja kotorij poluchili iz MainMenu i peredaem v QuizContainer
                 level={level}
+                handleQuestionIndex={(e) => setQuestionIndex(e)}
+                questionIndex={questionIndex}
                 scoreChange={setScoreEvent}
                 handleChange={setTryAgainEvent}
                 endQuiz={endQuizEvent}
