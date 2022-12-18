@@ -124,3 +124,15 @@ h2 {
   width: auto;
   display: flex;
 }
+
+.results-container {
+
+}
+
+.result-question {
+  color: greenyellow;
+}
+
+.result-answer {
+  color: yellow;
+}
