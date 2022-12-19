@@ -4,7 +4,7 @@ import {MainMenuComponent} from "./components/MainMenuComponent/main-menu-compon
 import {dataLevels} from './data'
 import {QuizContainerComponent} from "./components/QuizContainerComponent/quiz-container-component";
 import {ResultComponent} from "./components/ResultComponent/ResultComponent";
-
+import {GifsComponent} from "./components/GifsCoomponent/GifsComponent";
 
 const App = () => {
     const data = dataLevels;
