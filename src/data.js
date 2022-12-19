@@ -7,7 +7,7 @@ export const dataLevels = [
         id:1,
         title: "Beginner lvl Qestion 1",
         question:'Which unit is more powerful?',
-        answer: [`Archangel`, `Black Dragon`, `Titan`, `Lazure Dragon`],
+        answer: [`Archangel`, `Black Dragon`, `Titan`, `Azure Dragon`],
         correctAnswer: `Lazure Dragon`,
         level: 'beginner',
 
@@ -60,7 +60,7 @@ export const dataLevels = [
         title: "Middle lvl Qestion 1",
         question: 'Which unit is more powerful?',
         answer: [`Archangel`, `Black Dragon`, `Titan`, `Lazure Dragon`],
-        correctAnswer: `Dungen`,
+        correctAnswer: `Lazure Dragon`,
         level: 'middle',
     },
     {
@@ -68,7 +68,7 @@ export const dataLevels = [
         title: "Qestion 2",
         question: 'How many gold/day gives you  a capitol?',
         answer: [`3000`, `5000`, `4000`, `40000,`],
-        correctAnswer: `Dungen`,
+        correctAnswer: `4000`,
         level: 'middle',
 
     },
@@ -76,7 +76,7 @@ export const dataLevels = [
         title: "Qestion 3",
         question: 'Chose the name of heroe, who have default spell - lightning chain?',
         answer: [`Sandro`, `Solmir`, `Xeron`, `Jog,`],
-        correctAnswer: `Dungen`,
+        correctAnswer: `Solmir`,
         level: 'middle',
     },
     {
@@ -92,7 +92,7 @@ export const dataLevels = [
         title: "Qestion 5",
         question: 'How many items you need to combine a Statue of Legion?',
         answer: [`5`, `6`, `7`, `4,`],
-        correctAnswer: `Dungen`,
+        correctAnswer: `5`,
         level: 'middle',
     },
     {
@@ -100,7 +100,7 @@ export const dataLevels = [
         title: "Qestion 6",
         question: 'Which artifacte gives you "explosion" spell into your spellbock?',
         answer: [`Wizard's Well`, `Crown of Dragontooth`, `Helm of Chaos`, `Spellbinder's Hat`],
-        correctAnswer: `Dungen`,
+        correctAnswer: `Spellbinder's Hat`,
         level: 'middle',
     },
 

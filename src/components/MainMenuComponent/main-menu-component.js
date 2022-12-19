@@ -6,12 +6,14 @@ export const MainMenuComponent = ({handleChange, levelsList}) => {
     return (
         <div className="header">
             <div className="top">
-                <div className="modal"><h1>Welcome to Quiz of Heroes 3 + Hota</h1>
+                <div className="modal"><h1>Welcome to Quiz of Heroes 3 + HotA</h1>
                 </div>
                 <h1 className="task-box">Choose Your level!</h1>
                 <div className="button-box">
+                    {/*levelsList - massiv knopok(urovnej) kotorie teper zapisanni v odnu peremennuju. */}
+                    {/*Posle mi vizivaem ih po indexu, izhodja iz togo chto viberet user*/}
                     {levelsList.map((item, index) => (
-                        <button key={item} onClick={() => handleChange(item, index)} value={item}>{item.toUpperCase()}</button>
+                        <button className="button1" key={item} onClick={() => handleChange(item, index)} value={item}><h2 className="btnText"> {item.toUpperCase()}</h2> </button>
                     ))}
                 </div>
             </div>

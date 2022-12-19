@@ -12,15 +12,15 @@ export const ResultComponent = ({score,handleChange, data, level, levelIndexButt
     return (
         <div className="header">
             <div className="top">
-                <div className="modal"><h1></h1>
+                <div className="modal"><h1>End of Quiz</h1>
                 </div>
                 <h1 className="task-box">Your Score is {score} / 6 </h1>
-                <div className="button-box">
-                    <button onClick={tryAgainEvent}>Try Again!</button>
-                    <button onClick={() => setCorrectAnswersList(!isCorrectAnswersList)}>Show me correct answers!</button>
-                    {levelIndexButton !== lastIndex ? <button onClick={openNewLevel}>Go to next level</button> : null}
+                <div className="result-btns">
+                    <button className="button1" onClick={tryAgainEvent}><h2 className="btnText">Try Again!</h2></button>
+                    <button className="button1" onClick={() => setCorrectAnswersList(!isCorrectAnswersList)}><h2 className="btnText">Show me correct answers!</h2></button>
+                    {levelIndexButton !== lastIndex ? <button className="button1" onClick={openNewLevel}><h2 className="btnText">Go to next level</h2></button> : null}
                 </div>
-                <div className={'results-container'}>
+                <div className="results-container">
                     <ul>
                         {isCorrectAnswersList ? dataByLevel.map((data) => (
                             <li key={data.id}>
