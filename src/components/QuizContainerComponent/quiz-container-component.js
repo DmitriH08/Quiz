@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export const QuizContainerComponent = ({data, level, handleChange, scoreChange, endQuiz, questionIndex, handleQuestionIndex}) => {
+export const QuizContainerComponent = ({data, level, handleChange,  scoreChangeBack,scoreChangeNext, endQuiz, questionIndex, handleQuestionIndex}) => {
     // v uslovii metoda filter, level dolzen sootvetstvoovat levelu kotorij vibral user. Object v metode level eto object massiva
     const dataByLevel = data.filter(object => object.level === level);
     const questionsCount = dataByLevel.length;
@@ -16,7 +16,7 @@ export const QuizContainerComponent = ({data, level, handleChange, scoreChange, 
     const nextQuestionEvent = (correctAnswer) => {
         handleQuestionIndex(questionIndex + 1)
         if (userAnswer === correctAnswer) {
-            scoreChange()
+            scoreChangeNext()
         }
         if ((questionIndex + 1) >= questionsCount) {
             endQuiz()
@@ -28,8 +28,10 @@ export const QuizContainerComponent = ({data, level, handleChange, scoreChange, 
         //peredacha ot dochernego k roditelskomu ('')
         if (questionIndex === 0) {
             handleChange('')
+
         }
         handleQuestionIndex(questionIndex - 1)
+        scoreChangeBack()
     }
 
     return (

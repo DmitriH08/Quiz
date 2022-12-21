@@ -4,7 +4,7 @@ import {MainMenuComponent} from "./components/MainMenuComponent/main-menu-compon
 import {dataLevels} from './data'
 import {QuizContainerComponent} from "./components/QuizContainerComponent/quiz-container-component";
 import {ResultComponent} from "./components/ResultComponent/ResultComponent";
-import {GifsComponent} from "./components/GifsCoomponent/GifsComponent";
+import {AudioComponent} from "./components/AudioCoomponent/AudioComponent";
 
 const App = () => {
     const data = dataLevels;
@@ -19,7 +19,9 @@ const App = () => {
     const setScoreEvent = () =>{
         setScore(score + 1)
     }
-
+    const backScoreEvent = () =>{
+        setScore(score -1)
+    }
     const endQuizEvent = () =>{
         setResult(true)
     }
@@ -67,7 +69,8 @@ const App = () => {
                 level={level}
                 handleQuestionIndex={(e) => setQuestionIndex(e)}
                 questionIndex={questionIndex}
-                scoreChange={setScoreEvent}
+                scoreChangeNext={setScoreEvent}
+                scoreChangeBack={backScoreEvent}
                 handleChange={setTryAgainEvent}
                 endQuiz={endQuizEvent}
             ></QuizContainerComponent> }
