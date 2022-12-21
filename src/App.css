@@ -178,9 +178,9 @@ h2 {
 }
 .Victory{
 
-  margin: 0px 20px 85px 20px;
-  width: 400px;
-  height: 190px;
+  margin: 0px 20px 140px 20px;
+  width: 380px;
+  height: 140px;
   justify-content: center;
   align-items: center;
 
@@ -189,8 +189,8 @@ h2 {
   font-size: 16px;
   font-family: 'Times New Roman', Times, serif;
   color: rgb(239, 220, 117);
-  margin: 0 auto;
-  padding-bottom: 20px;
+  margin: -5px auto;
+  padding-bottom: 25px;
   height: 240px;
   width: 360px;
   display: flex;
