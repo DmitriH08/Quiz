@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import logo2 from  '../../images/Victory.gif';
 export const ResultComponent = ({score,handleChange, data, level, levelIndexButton, lastIndex, openNewLevel}) => {
     const dataByLevel = data.filter(object => object.level === level);
     const [isCorrectAnswersList, setCorrectAnswersList] = useState(false);
@@ -8,13 +9,17 @@ export const ResultComponent = ({score,handleChange, data, level, levelIndexButt
             handleChange('')
         }
     }
+    const [victory,setVictory] = useState(false)
+    // setAllAnswers() =>{
 
+    // }
     return (
         <div className="header">
             <div className="top">
                 <div className="modal"><h1>End of Quiz</h1>
                 </div>
-                <h1 className="task-box">Your Score is {score} / 6 </h1>
+                <h1 className="scoreTask-box"><img className="Victory" src={logo2}/>Your Score is {score} / 6 </h1>
+
                 <div className="result-btns">
                     <button className="button1" onClick={tryAgainEvent}><h2 className="btnText">Try Again!</h2></button>
                     <button className="button1" onClick={() => setCorrectAnswersList(!isCorrectAnswersList)}><h2 className="btnText">Show me correct answers!</h2></button>
@@ -22,7 +27,7 @@ export const ResultComponent = ({score,handleChange, data, level, levelIndexButt
                 </div>
                 <div className="results-container">
                     <ul>
-                        {isCorrectAnswersList ? dataByLevel.map((data) => (
+                        {isCorrectAnswersList  ? dataByLevel.map((data) => (
                             <li key={data.id}>
                                 <p className="result-question">{data.question}</p>
                                 <p className="result-answer">{data.correctAnswer}</p>

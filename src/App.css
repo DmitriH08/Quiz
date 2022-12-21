@@ -3,7 +3,7 @@ html {
   margin: 0;
   padding: 0;
   background-color: orange;
-  background-image: url(/imgages/terrainc.png);
+  background-image: url(images/terrainc.png);
 }
 
 .header {
@@ -20,7 +20,7 @@ html {
   height: 663px;
   width: 442px;
   border: 2px solid black;
-  background-image: url(/imgages/window1.png);
+  background-image: url(images/window1.png);
 
 }
 
@@ -73,6 +73,7 @@ h2 {
 
 } */
 .answer-box {
+  margin-left: 10px;
   height: 190px;
   display: flex;
   width: auto;
@@ -95,24 +96,24 @@ h2 {
   border: none;
 }
 .button-box {
-  margin: 20px 20px 0px 20px;
+  margin: 20px 20px 20px 28px;
   width: 380px;
   display: flex;
   flex-direction: row;
   /* justify-content: end; */
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
 }
 
 .button1 {
-  background: url(/imgages/button.png);
+  background: url(images/button.png);
   height: 38px;
   width: 70px;
   cursor: pointer;
 }
 
 .button2 {
-  background: url(/imgages/button.png);
+  background: url(images/button.png);
   height: 38px;
   width: 70px;
   cursor: pointer;
@@ -126,7 +127,7 @@ h2 {
   justify-content: space-evenly;
 }
 .result-btns{
-  margin: 20px 20px 0px 20px;
+  margin: 20px 20px 20px 28px;
   width: 380px;
   display: flex;
   flex-direction: row;
@@ -166,4 +167,36 @@ h2 {
 
 .red {
   color: red;
+}
+.waitingImg {
+  width: 550px;
+  height: 260px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+}
+.Victory{
+
+  margin: 0px 20px 85px 20px;
+  width: 400px;
+  height: 190px;
+  justify-content: center;
+  align-items: center;
+
+}
+.scoreTask-box{
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(239, 220, 117);
+  margin: 0 auto;
+  padding-bottom: 20px;
+  height: 240px;
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
 }
