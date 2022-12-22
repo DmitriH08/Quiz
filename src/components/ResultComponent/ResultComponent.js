@@ -20,7 +20,7 @@ export const ResultComponent = ({score,handleChange, data, level, levelIndexButt
             <div className="top">
                 <div className="modal"><h1>End of Quiz</h1>
                 </div>
-                {score !== 6 ? null : <AudioComponent isVictory={score !== 6}></AudioComponent>}
+                {score !== 6 ? null : <AudioComponent music={music} logo={logo2} isVictory={score !== 6}></AudioComponent>}
                 <h1 className="scoreTask-box">Your Score is {score} / 6 </h1>
                 <div className="result-btns">
                     <button className="button1" onClick={tryAgainEvent}><h2 className="btnText">Try Again!</h2></button>
