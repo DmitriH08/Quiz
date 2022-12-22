@@ -17,7 +17,7 @@ export const MainMenuComponent = ({handleChange, levelsList,waitingImage}) => {
 
                     {!waitingImage ?  levelsList.map((item, index) => (
                         <button className="button1" key={item} onClick={() => handleChange(item, index)} value={item}><h2 className="btnText"> {item.toUpperCase()}</h2> </button>
-                    )) : <AudioComponent mp3={mp3} logo={logo}></AudioComponent>
+                    )) : <AudioComponent music={mp3} logo={logo}></AudioComponent>
                     }
 
                 </div>
