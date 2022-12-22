@@ -1,88 +1,94 @@
 import './App.css';
-import { useState } from "react";
-import MainMenu from "./MainMenu/MainMenu";
-import dataLevels from "./data";
-import { RenderComponents } from './MainMenu/RenderComponents';
-
-
+import {useState} from "react";
+import {MainMenuComponent} from "./components/MainMenuComponent/main-menu-component";
+import {dataLevels} from './data'
+import {QuizContainerComponent} from "./components/QuizContainerComponent/quiz-container-component";
+import {ResultComponent} from "./components/ResultComponent/ResultComponent";
+import {AudioComponent} from "./components/AudioCoomponent/AudioComponent";
 
 const App = () => {
-const data = dataLevels
-
-const [level, setLevel] = useState('');
-const setLevelEvent = (e) => {
-  setLevel(e.target.value);
-
-  const [questionIndex, setQuestionIndex] = useState(0);
-  const [score, setScore] = useState(0);
-
-  const nextQuestion = (selectedIndex) => {
-    // data.length - 1 = index poslednego elementa
-    if (dataBeginner[questionIndex].correctAnswer === selectedIndex) {
-      setScore(score + 1)
+    const data = dataLevels;
+    const levelsList = ['beginner', 'middle', 'master', 'hardcore'];
+    // pustaja stroka s useState - iznachalnoe znachenie levela
+    const [level, setLevel] = useState('');
+    const [score, setScore] = useState(0);
+    const [questionIndex, setQuestionIndex] = useState(0);
+    const [levelIndexButton, setLevelIndexButton] = useState(0);
+    const [result, setResult] = useState(false)
+    const [waitingImage,setWaitingImage] = useState(false);
+    const setScoreEvent = () =>{
+        setScore(score + 1)
+    }
+    const backScoreEvent = () =>{
+        setScore(score -1)
+    }
+    const endQuizEvent = () =>{
+        setResult(true)
+    }
+    // setLevelEvent prinimaet sobitie kotoroe peredaetsa v (e),  v nawem sluchae e - element v kotorom proizowlo sobitie
+    // Toest mi menjaem state levela s pustoj stroki na znachenie kotoroe vibral user i komponenta pererisovivaetsa
+    const setLevelEvent = (e, index) => {
+        setWaitingImage(true)
+        setTimeout(()=> {
+            setLevel(e);
+            setLevelIndexButton(index);
+            reset();
+            setWaitingImage(false)
+        },2800)
     };
-    if (dataMidle[questionIndex].correctAnswer === selectedIndex) {
-      setScore(score + 1)
+    const setTryAgainEvent = (e) =>{
+        setLevel(e);
+        setLevelIndexButton(0)
+        reset();
     };
-    setQuestionIndex(questionIndex + 1);
-    // } else {
-    //     alert("NEPRAVILNO");
-    // } 
 
-  };
+    const openNextLevel = () => {
+        setLevelIndexButton(levelIndexButton + 1);
+        const newLevel = levelsList.at(levelIndexButton + 1);
+        setLevel(newLevel);
+        reset();
+    }
 
-  const startQuizBeg = () => {
-    if (setQuestionIndex(1) === true) {
-      // setScore(score +1)
-    };
-  }
-  const startQuizMid = () => {
-    if (setQuestionIndex(1) === true) {
-      // setScore(score +1)
-    };
-  }
+    const reset = () => {
+        setResult(false);
+        setScore(0)
+        setQuestionIndex(0)
+    }
 
 
-  const previousQuiestion = () => {
-    // console.log(`1,2,3`);
-    setQuestionIndex(questionIndex - 1)
-  }
+    return (
 
-
-  // tut mi otrisovivaem ves Card component, no suda mi zapisivaem propsi (lelvel, data)
-  return (
-    <div>
-
-      {!level ? <MainMenu handleChange ={setLevelEvent}></MainMenu> : null }
-      {level ? <RenderComponents data = {data} level = {level}></RenderComponents> : null}
-        {/* // title={dataBeginner[questionIndex].title}
-        // question={dataBeginner[questionIndex].question}
-        // previousQuiestion={previousQuiestion}
-        // nextQuestion={nextQuestion}
-        // startQuizBeg={startQuizBeg}
-        // answer={dataBeginner[questionIndex].answer}
-        // lastElement={questionIndex === dataBeginner.length - 1}
-        // score={score}
-        // dataBeginner={dataBeginner}  */}
-
-     
-      {/* <Midle
-        title={dataMidle[questionIndex].title}
-        questionMid={dataMidle[questionIndex].questionMid}
-        previousQuiestion={previousQuiestion}
-        nextQuestion={nextQuestion}
-        startQuizMid={startQuizMid}
-        answer={dataMidle[questionIndex].answer}
-        lastElement={questionIndex === dataMidle.length - 1}
-        score={score}
-        dataMidle={dataMidle}
-
-      /> */}
-
-
-    </div>
-  
-  );
+        <div>
+            {/*esli net urovnja to u nas pustaja srtoka ili ee net toest 'null, a esli est to u nas vivoditsa komponenta s voprosami izhodja ot levela*/}
+            {/*   props  handleChange idet v dochernuju komponentu a to chto sprava (setLevelEvent) idet v roditelskuju t.e v App.js*/}
+            {!level ? <MainMenuComponent levelsList={levelsList}
+                                         waitingImage={waitingImage}
+                                         handleChange={setLevelEvent}></MainMenuComponent> : <QuizContainerComponent
+                // data i level - mi peredaem dannie v vide props v komponentu
+                data={data}
+                // level - pervichnij state urovnja kotorij poluchili iz MainMenu i peredaem v QuizContainer
+                level={level}
+                handleQuestionIndex={(e) => setQuestionIndex(e)}
+                questionIndex={questionIndex}
+                scoreChangeNext={setScoreEvent}
+                scoreChangeBack={backScoreEvent}
+                handleChange={setTryAgainEvent}
+                endQuiz={endQuizEvent}
+            ></QuizContainerComponent> }
+                }
+            {/*    esli est level to risuetsa voprosi s otvetami i td*/}
+            {result ?
+            <ResultComponent
+                openNewLevel={openNextLevel}
+                lastIndex={levelsList.length - 1}
+                levelIndexButton={levelIndexButton}
+                level={level}
+                data={data}
+                handleChange={setTryAgainEvent}
+                score = {score}
+            ></ResultComponent> : null }
+        </div>
+    );
 };
 
 export default App;
