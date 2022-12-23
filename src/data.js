@@ -1,8 +1,6 @@
 
 export const dataLevels = [
 
-
-
     {
         id:1,
         title: "Beginner lvl Qestion 1",
@@ -10,7 +8,6 @@ export const dataLevels = [
         answer: [`Archangel`, `Black Dragon`, `Titan`, `Azure Dragon`],
         correctAnswer: `Azure Dragon`,
         level: 'beginner',
-
     },
 
     {

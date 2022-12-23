@@ -1,15 +1,21 @@
 import React, {useState} from "react";
 
-export const QuizContainerComponent = ({data, level, handleChange,  scoreChangeBack,scoreChangeNext, endQuiz, questionIndex, handleQuestionIndex}) => {
-    // v uslovii metoda filter, level dolzen sootvetstvoovat levelu kotorij vibral user. Object v metode level eto object massiva
+export const QuizContainerComponent = ({
+                                           data,
+                                           level,
+                                           handleChange,
+                                           scoreChangeBack,
+                                           scoreChangeNext,
+                                           endQuiz,
+                                           questionIndex,
+                                           handleQuestionIndex
+                                       }) => {
     const dataByLevel = data.filter(object => object.level === level);
     const questionsCount = dataByLevel.length;
     const [answerIndex, setAnswerIndex] = useState(0);
     const [userAnswer, setUserAnswer] = useState('')
     const setUserAnswerEvent = (e, answerIndex) => {
-        // pri vibore chekboxa uznaem chto polzavatel vibral(otvet- (e.target.value))
         setUserAnswer(e.target.value)
-        // setAnswerIndex otmechaet pravilnij checkbox
         setAnswerIndex(answerIndex)
     }
 
@@ -22,10 +28,7 @@ export const QuizContainerComponent = ({data, level, handleChange,  scoreChangeB
             endQuiz()
         }
     }
-
-
     const previousQuestionEvent = () => {
-        //peredacha ot dochernego k roditelskomu ('')
         if (questionIndex === 0) {
             handleChange('')
 
@@ -33,12 +36,9 @@ export const QuizContainerComponent = ({data, level, handleChange,  scoreChangeB
         handleQuestionIndex(questionIndex - 1)
         scoreChangeBack()
     }
-
     return (
         <div>
-            {/*questionIndex = 0, no kogda mi nazimaem na sled vopros to index menaetsa na +1, i zastavljaet komponentu pererisovatsa, t.k menjaetsa state*/}
             {dataByLevel.map((item, i) =>
-                // esli quiestionIndex sovpodaet s indexom voprosa (element massiva), to on risuet nuznie voprosi
                 (questionIndex === i ?
                     <div key={item.id}>
                         <div className="header">
@@ -48,12 +48,9 @@ export const QuizContainerComponent = ({data, level, handleChange,  scoreChangeB
                                 </div>
                                 <h1 className="task-box">{item.question}</h1>
                                 <div className="answer-box">
-                                    {/*el - eto massiv otvetov kotorie mi vivodim iz massiva strokami */}
                                     {item.answer.map((answer, index) =>
                                         <div key={index}>
                                             <label htmlFor={index.toString()}><h2>{answer}</h2></label>
-                                            {/*Primer onChange: .addEventListener('click'/change, setUserAnswerEvent(e.target.value, index))
-                                        v dannom sluchae (e) eto callback functia*/}
                                             <input checked={index === answerIndex} value={answer}
                                                    onChange={(e) => setUserAnswerEvent(e, index)} id={index}
                                                    type="checkbox"/>

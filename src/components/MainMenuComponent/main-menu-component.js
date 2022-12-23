@@ -3,8 +3,6 @@ import AudioComponent from "../AudioCoomponent/AudioComponent";
 import logo from "../../images/Waiting.gif";
 import mp3 from "../../playlist/newDay.mp3"
 export const MainMenuComponent = ({handleChange, levelsList,waitingImage}) => {
-    // handleChange - eto event kotoroe javlaetsa callback funkciej i kotoraja mozet peredavat evenet ot rebenka k roditelju
-    // v nawem sluchae on peredaet event v App js
     return (
         <div className="header">
             <div className="top">
@@ -12,16 +10,11 @@ export const MainMenuComponent = ({handleChange, levelsList,waitingImage}) => {
                 </div>
                 <h1 className="task-box">Choose Your level!</h1>
                 <div className="button-box">
-                    {/*levelsList - massiv knopok(urovnej) kotorie teper zapisanni v odnu peremennuju. */}
-                    {/*Posle mi vizivaem ih po indexu, izhodja iz togo chto viberet user*/}
-
                     {!waitingImage ?  levelsList.map((item, index) => (
                         <button className="button1" key={item} onClick={() => handleChange(item, index)} value={item}><h2 className="btnText"> {item.toUpperCase()}</h2> </button>
-                    )) : <AudioComponent music={mp3} logo={logo}></AudioComponent>
+                    )) :<div id="waitingImg"><AudioComponent music={mp3} logo={logo}></AudioComponent></div>
                     }
-
                 </div>
-
             </div>
         </div>
     )

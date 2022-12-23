@@ -24,8 +24,6 @@ html {
 
 }
 
-.questionBox {}
-
 .modal {
   padding-bottom: 8px;
   margin: 5px;
@@ -59,19 +57,8 @@ h2 {
   align-items: center;
   justify-content: center;
   text-align: center;
-
-  /* border: 1px solid black;  */
-
 }
 
-/* .task-help {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -20px;
-    
-
-} */
 .answer-box {
   margin-left: 10px;
   height: 190px;
@@ -157,34 +144,6 @@ h2 {
   border-radius: 4px;
 
 }
-.result-question {
-  color: greenyellow;
-}
-
-.result-answer {
-  color: yellow;
-}
-
-.red {
-  color: red;
-}
-.waitingImg {
-  width: 550px;
-  height: 260px;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-
-}
-.Victory{
-
-  margin: 0px 20px 140px 20px;
-  width: 380px;
-  height: 140px;
-  justify-content: center;
-  align-items: center;
-
-}
 .scoreTask-box{
   font-size: 16px;
   font-family: 'Times New Roman', Times, serif;
@@ -200,6 +159,30 @@ h2 {
   text-align: center;
 
 }
-.NewDay{
-  audio: autoplay;
+
+.result-question {
+  color: greenyellow;
 }
+
+.result-answer {
+  color: yellow;
+}
+
+.red {
+  color: red;
+}
+#Victory {
+  margin: 0px 20px 160px 20px;
+  width: 380px;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+}
+#waitingImg {
+  width: 380px;
+  height: 260px;
+  justify-content: center;
+  align-items: center;
+  margin:0 auto;
+}
+
