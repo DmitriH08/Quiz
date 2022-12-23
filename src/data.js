@@ -105,7 +105,7 @@ export const dataLevels = [
         id:13,
         title: "Master lvl Qestion 1",
         question:'Choose correct lvl when heroe can reach skill "wisdom" first time?',
-        answer: [`2`,`6`,`4`, `5`],
+        answer: [`2`,`7`,`4`, `6`],
         correctAnswer:`6`,
         level: 'master',
 
@@ -156,7 +156,7 @@ export const dataLevels = [
         id:19,
         title: "Hardcore lvl Qestion 1",
         question: 'Your heroe did some moves, can he dig a Holy Grail?',
-        answer: [`No,its imposible`, `Yes,he can,by exchanging units`, `Only if he lost 50 move-points`, `Only if he have angel-wings/ fly`],
+        answer: [`No,its imposible`, `Only if he have angel-wings/ fly` , `Only if he lost 50 move-points`, `Yes,he can,by exchanging units`],
         correctAnswer: `Yes,he can,by exchanging units`,
         level: 'hardcore',
     },
