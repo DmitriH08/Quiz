@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "./static/css/main.a21aa9e2.css",
+    "main.js": "./static/js/main.670f3376.js",
+    "static/media/Victory.gif": "./static/media/Victory.d8a1447ea7faf094d862.gif",
+    "static/media/Waiting.gif": "./static/media/Waiting.9702c407e01f42cb6f3e.gif",
+    "static/media/terrainc.png": "./static/media/terrainc.321b4c572c0a105006df.png",
+    "static/media/window1.png": "./static/media/window1.85701e92e0b07f1255ff.png",
+    "static/media/Victory.mp3": "./static/media/Victory.5b89ff97a98b7305349d.mp3",
+    "static/media/newDay.mp3": "./static/media/newDay.399016d01acc79d0affe.mp3",
+    "index.html": "./index.html",
+    "main.a21aa9e2.css.map": "./static/css/main.a21aa9e2.css.map",
+    "main.670f3376.js.map": "./static/js/main.670f3376.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a21aa9e2.css",
+    "static/js/main.670f3376.js"
+  ]
+}
