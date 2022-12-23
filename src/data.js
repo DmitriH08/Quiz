@@ -104,9 +104,9 @@ export const dataLevels = [
     {
         id:13,
         title: "Master lvl Qestion 1",
-        question:'What the min amount of angels you can have in griffons conservatory (100-200)?',
-        answer: [`3`, `4`,`2`, `5`],
-        correctAnswer:`2`,
+        question:'Choose correct lvl when heroe can reach skill "wisdom" first time?',
+        answer: [`2`, `6`,`4`, `5`],
+        correctAnswer:`6`,
         level: 'master',
 
     },
