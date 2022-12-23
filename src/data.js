@@ -105,7 +105,7 @@ export const dataLevels = [
         id:13,
         title: "Master lvl Qestion 1",
         question:'Choose correct lvl when heroe can reach skill "wisdom" first time?',
-        answer: [`2`, `6`,`4`, `5`],
+        answer: [`2`,`6`,`4`, `5`],
         correctAnswer:`6`,
         level: 'master',
 
