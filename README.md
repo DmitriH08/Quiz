@@ -1,6 +1,6 @@
 DOCUMENTATION
 
-Tools and fraimworks:
+Tools and frameworks:
 React JS,PSh, CSS.
 
 This project was created for trying your knowledge in quiz game about popular "old school" game Heroes of Might and Magic 3 + add. version Horn of the Abyss.
