@@ -1,7 +1,7 @@
 DOCUMENTATION
 
 Tools and frameworks:
-React JS,PSh, CSS.
+React JS,Adobe Photoshop, CSS.
 
 This project was created for trying your knowledge in quiz game about popular "old school" game Heroes of Might and Magic 3 + add. version Horn of the Abyss.
 Strong side of this app is versatility (If you want to add or change for example data, you dont crush app probably).This app have tree-kind code structure:
